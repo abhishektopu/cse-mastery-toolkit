@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guanxi Relationship Mapper • CSE Mastery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3 hover:text-amber-400 transition">
+          <span class="text-3xl">🀄</span>
+          <h1 class="text-2xl font-bold tracking-tight">CSE Mastery</h1>
+        </a>
+      </div>
+      <div class="flex items-center gap-8">
+        <a href="index.html" class="hover:text-amber-400 transition">← Back to Dashboard</a>
+        <a href="https://your-gumroad-link.com" target="_blank"
+           class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-3 rounded-xl transition">
+          Get Full Toolkit — $197
+        </a>
+      </div>
+    </div>
+  </nav>
 
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <h1 class="text-5xl font-bold tracking-tighter mb-2">Guanxi Relationship Mapper</h1>
+    <p class="text-zinc-400 text-xl mb-8">Build, visualize, and manage long-term strategic relationships — the Chinese way</p>
+
+    <div class="grid lg:grid-cols-12 gap-8">
+      <!-- Add New Contact -->
+      <div class="lg:col-span-4 bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+        <h3 class="text-2xl font-semibold mb-6">Add New Contact / Partner</h3>
+        <div class="space-y-6">
+          <div>
+            <label class="block text-sm text-zinc-400 mb-2">Name / Company</label>
+            <input id="nameInput" type="text" 
+                   class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 outline-none"
+                   placeholder="e.g. Mr. Zhang Wei - ABC Corp">
+          </div>
+          <div>
+            <label class="block text-sm text-zinc-400 mb-2">Relationship Strength (1-10)</label>
+            <input id="strengthInput" type="range" min="1" max="10" value="5" 
+                   class="w-full accent-amber-400">
+            <div class="flex justify-between text-xs text-zinc-400 mt-1">
+              <span>Weak</span><span id="strengthValue" class="font-bold text-amber-400">5</span><span>Strong</span>
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm text-zinc-400 mb-2">Notes / Favors / Face</label>
+            <textarea id="notesInput" rows="3" 
+                      class="w-full bg-black border border-zinc-700 rounded-2xl px-6 py-4 outline-none"
+                      placeholder="e.g. Helped with introduction last year"></textarea>
+          </div>
+          <button onclick="addContact()" 
+                  class="w-full bg-amber-500 hover:bg-amber-400 text-black font-semibold py-4 rounded-2xl transition">
+            Add to Guanxi Network →
+          </button>
+        </div>
+      </div>
+
+      <!-- Network Visualization -->
+      <div class="lg:col-span-8 bg-zinc-900 border border-zinc-700 rounded-3xl p-8">
+        <h3 class="text-2xl font-semibold mb-6 flex items-center gap-3">
+          Your Guanxi Network 
+          <span id="contactCount" class="text-sm bg-zinc-800 text-amber-400 px-3 py-1 rounded-full">0 contacts</span>
+        </h3>
+        
+        <div id="networkGrid" class="grid grid-cols-2 md:grid-cols-3 gap-4 min-h-[400px]">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/guanxi.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
