@@ -1,23 +1,27 @@
-// assets/js/canvas.js
+// assets/js/canvas.js - FIXED & IMPROVED
 let allStratagems = [];
 
 async function loadStratagems() {
   try {
-    // Since we have stratagems.json in the same repo
     const response = await fetch('assets/data/stratagems.json');
     const data = await response.json();
     allStratagems = data.stratagems;
     renderStratagems(allStratagems);
   } catch (e) {
     console.error("Could not load stratagems.json", e);
-    // Fallback if fetch fails (GitHub Pages sometimes needs full path)
-    console.log("%cUsing fallback stratagems", "color: #fbbf24");
+    document.getElementById('stratagemsGrid').innerHTML = `
+      <p class="col-span-full text-center py-12 text-red-400">Error loading stratagems. Please refresh.</p>`;
   }
 }
 
 function renderStratagems(stratagems) {
   const grid = document.getElementById('stratagemsGrid');
   grid.innerHTML = '';
+
+  if (stratagems.length === 0) {
+    grid.innerHTML = `<p class="col-span-full text-center py-12 text-zinc-400">No stratagems found.<br>Try different search terms like "competitor", "crisis", "partner", or "negotiation".</p>`;
+    return;
+  }
 
   stratagems.forEach(stratagem => {
     const card = document.createElement('div');
@@ -34,10 +38,6 @@ function renderStratagems(stratagems) {
     card.onclick = () => showDetail(stratagem);
     grid.appendChild(card);
   });
-
-  if (stratagems.length === 0) {
-    grid.innerHTML = `<p class="col-span-full text-center py-12 text-zinc-400">No stratagems found. Try different search terms.</p>`;
-  }
 }
 
 function showDetail(stratagem) {
@@ -47,56 +47,37 @@ function showDetail(stratagem) {
   document.getElementById('modalDescription').textContent = stratagem.description;
   document.getElementById('modalExample').textContent = stratagem.example || "Apply this stratagem in real business situations.";
   
-  document.getElementById('detailModal').classList.remove('hidden');
-  document.getElementById('detailModal').classList.add('flex');
+  const modal = document.getElementById('detailModal');
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
 }
 
 function closeModal() {
   const modal = document.getElementById('detailModal');
   modal.classList.add('hidden');
   modal.classList.remove('flex');
-  document.getElementById('applyResult').classList.add('hidden');
 }
 
-function applyStratagem() {
-  const input = document.getElementById('situationInput').value.trim();
-  const resultDiv = document.getElementById('applyResult');
-  
-  if (!input) {
-    resultDiv.innerHTML = `<p class="text-amber-400">Please describe your situation above.</p>`;
-  } else {
-    resultDiv.innerHTML = `
-      <div class="p-4 bg-green-900/30 border border-green-400 rounded-2xl text-green-300">
-        <strong>Smart Move Suggestion:</strong><br>
-        Based on this stratagem, you should <span class="font-semibold">${input.toLowerCase().includes('competitor') ? 'create a distraction and strike elsewhere' : 'act decisively while maintaining calm'}</span>.<br><br>
-        <small class="text-green-400">This is how Chinese strategists turn difficult situations into advantage.</small>
-      </div>
-    `;
-  }
-  resultDiv.classList.remove('hidden');
+// Improved search — now searches EXAMPLE too + more flexible
+function filterStratagems() {
+  const term = document.getElementById('searchInput').value.toLowerCase().trim();
+  const category = document.getElementById('categoryFilter').value;
+
+  const filtered = allStratagems.filter(s => {
+    const searchText = `${s.name} ${s.pinyin} ${s.description} ${s.example || ''} ${s.tags ? s.tags.join(' ') : ''}`.toLowerCase();
+    
+    const matchesSearch = !term || searchText.includes(term);
+    const matchesCategory = !category || s.category === category;
+    
+    return matchesSearch && matchesCategory;
+  });
+
+  renderStratagems(filtered);
 }
 
-// Live search & filter
 function addEventListeners() {
   const searchInput = document.getElementById('searchInput');
   const categoryFilter = document.getElementById('categoryFilter');
-
-  function filterStratagems() {
-    const term = searchInput.value.toLowerCase().trim();
-    const category = categoryFilter.value;
-
-    const filtered = allStratagems.filter(s => {
-      const matchesSearch = !term || 
-        s.name.toLowerCase().includes(term) ||
-        s.description.toLowerCase().includes(term) ||
-        s.pinyin.toLowerCase().includes(term);
-      
-      const matchesCategory = !category || s.category === category;
-      return matchesSearch && matchesCategory;
-    });
-
-    renderStratagems(filtered);
-  }
 
   searchInput.addEventListener('input', filterStratagems);
   categoryFilter.addEventListener('change', filterStratagems);
@@ -112,5 +93,5 @@ function resetFilters() {
 window.onload = () => {
   loadStratagems();
   addEventListeners();
-  console.log('%c🎨 36 Stratagems Canvas ready!', 'color:#fbbf24; font-weight:bold');
+  console.log('%c🎨 36 Stratagems Canvas — FIXED & READY!', 'color:#fbbf24; font-weight:bold');
 };
