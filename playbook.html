@@ -1,1 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSE Playbook • CSE Mastery Toolkit</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', system_ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100">
+  <!-- Navbar -->
+  <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3 hover:text-amber-400 transition">
+          <span class="text-3xl">🀄</span>
+          <h1 class="text-2xl font-bold tracking-tight">CSE Mastery</h1>
+        </a>
+      </div>
+      <div class="flex items-center gap-8">
+        <a href="index.html" class="hover:text-amber-400 transition">← Back to Dashboard</a>
+        <a href="https://your-gumroad-link.com" target="_blank"
+           class="bg-amber-500 hover:bg-amber-400 text-black font-semibold px-6 py-3 rounded-xl transition">
+          Get Full Toolkit — $197
+        </a>
+      </div>
+    </div>
+  </nav>
 
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <h1 class="text-5xl font-bold tracking-tighter mb-2">CSE Mastery Playbook</h1>
+    <p class="text-2xl text-amber-400 mb-8">120+ pages of Chinese Strategic Management — ready to use</p>
+
+    <div class="bg-gradient-to-r from-amber-500/10 to-transparent border border-amber-400/30 rounded-3xl p-8 mb-12">
+      <h2 class="text-3xl font-semibold mb-4">What you get inside:</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-zinc-300">
+        <div>✅ Full 36 Stratagems explained with modern business examples</div>
+        <div>✅ Core Chinese principles (Shi, Guanxi, Tian Shi Di Li Ren He, Wu Wei)</div>
+        <div>✅ 12 ready-to-use strategy templates (PDF + Notion)</div>
+        <div>✅ Negotiation &amp; crisis frameworks</div>
+        <div>✅ Competitor analysis using Chinese lens</div>
+        <div>✅ Lifetime updates</div>
+      </div>
+    </div>
+
+    <!-- Quick Jump -->
+    <div class="flex flex-wrap gap-3 mb-12">
+      <a href="#stratagems-list" class="px-6 py-3 bg-zinc-900 hover:bg-amber-400 hover:text-black rounded-2xl transition">36 Stratagems</a>
+      <a href="#principles" class="px-6 py-3 bg-zinc-900 hover:bg-amber-400 hover:text-black rounded-2xl transition">Core Principles</a>
+      <a href="#templates" class="px-6 py-3 bg-zinc-900 hover:bg-amber-400 hover:text-black rounded-2xl transition">Download Templates</a>
+    </div>
+
+    <!-- Stratagems List (clickable) -->
+    <section id="stratagems-list" class="mb-16">
+      <h2 class="text-3xl font-semibold mb-6">The 36 Stratagems</h2>
+      <div id="playbookStratagems" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Core Principles -->
+    <section id="principles" class="mb-16 bg-zinc-900 border border-zinc-700 rounded-3xl p-10">
+      <h2 class="text-3xl font-semibold mb-8">Core Chinese Strategic Principles</h2>
+      <div class="space-y-8">
+        <div class="flex gap-6">
+          <div class="text-4xl">🌍</div>
+          <div>
+            <h3 class="text-2xl font-semibold">Shi (势) — Positional Advantage</h3>
+            <p class="text-zinc-400">The momentum and configuration of the situation. Master this and you win before fighting.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-4xl">🤝</div>
+          <div>
+            <h3 class="text-2xl font-semibold">Guanxi (关系) — Relationship Capital</h3>
+            <p class="text-zinc-400">Long-term mutual obligations and trust. The real currency in Chinese business.</p>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="text-4xl">☯️</div>
+          <div>
+            <h3 class="text-2xl font-semibold">Tian Shi · Di Li · Ren He</h3>
+            <p class="text-zinc-400">Heavenly timing · Geographical advantage · Human harmony — the complete strategic triangle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Templates & Bonuses -->
+    <section id="templates" class="mb-16">
+      <h2 class="text-3xl font-semibold mb-6">Ready-to-Use Templates &amp; Bonuses</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="bonuses/cse-playbook.pdf" target="_blank"
+           class="block bg-zinc-900 border border-zinc-700 hover:border-amber-400 rounded-3xl p-8 transition group">
+          <div class="text-4xl mb-4">📕</div>
+          <h3 class="text-2xl font-semibold group-hover:text-amber-400">Full CSE Playbook PDF</h3>
+          <p class="text-zinc-400">120+ pages — Sun Tzu + 36 Stratagems + modern case studies</p>
+          <span class="text-amber-400 text-sm mt-6 block">Download PDF →</span>
+        </a>
+        
+        <a href="bonuses/templates/" target="_blank"
+           class="block bg-zinc-900 border border-zinc-700 hover:border-amber-400 rounded-3xl p-8 transition group">
+          <div class="text-4xl mb-4">📋</div>
+          <h3 class="text-2xl font-semibold group-hover:text-amber-400">12 Strategy Templates</h3>
+          <p class="text-zinc-400">Negotiation canvas, Shi analyzer worksheet, Guanxi tracker, etc.</p>
+          <span class="text-amber-400 text-sm mt-6 block">Open Templates Folder →</span>
+        </a>
+      </div>
+    </section>
+
+    <div class="text-center py-12 border-t border-zinc-800">
+      <p class="text-zinc-400">This is the complete toolkit. You now have everything you need to apply Chinese Strategic Management in real time.</p>
+      <a href="https://your-gumroad-link.com" target="_blank"
+         class="inline-block mt-8 bg-amber-500 hover:bg-amber-400 text-black font-semibold px-12 py-6 rounded-3xl text-2xl transition">
+        Get Lifetime Access — Only $197
+      </a>
+    </div>
+  </div>
+
+  <script src="assets/data/stratagems.json"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Quick playbook stratagems grid
+    async function renderPlaybookStratagems() {
+      try {
+        const res = await fetch('assets/data/stratagems.json');
+        const data = await res.json();
+        const container = document.getElementById('playbookStratagems');
+        
+        data.stratagems.forEach(s => {
+          const div = document.createElement('div');
+          div.className = "bg-zinc-900 border border-zinc-700 hover:border-amber-400 rounded-3xl p-6 cursor-pointer transition";
+          div.innerHTML = `
+            <span class="text-xs text-amber-400">#${s.id}</span>
+            <h4 class="font-semibold mt-2">${s.name}</h4>
+            <p class="text-xs italic text-zinc-400">${s.pinyin}</p>
+            <p class="text-sm text-zinc-500 mt-3 line-clamp-3">${s.description}</p>
+          `;
+          div.onclick = () => window.location.href = 'canvas.html';
+          container.appendChild(div);
+        });
+      } catch(e) {}
+    }
+    window.onload = renderPlaybookStratagems;
+  </script>
+</body>
+</html>
