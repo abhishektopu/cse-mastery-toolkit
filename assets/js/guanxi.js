@@ -1,8 +1,7 @@
-// assets/js/guanxi.js
+// assets/js/guanxi.js - Now with Delete button
 let contacts = [];
 
 function loadContacts() {
-  // In real version you could save to localStorage
   const saved = localStorage.getItem('guanxiContacts');
   if (saved) contacts = JSON.parse(saved);
   renderNetwork();
@@ -37,6 +36,14 @@ function addContact() {
   document.getElementById('notesInput').value = '';
 }
 
+function deleteContact(id) {
+  if (confirm("Delete this contact?")) {
+    contacts = contacts.filter(c => c.id !== id);
+    saveContacts();
+    renderNetwork();
+  }
+}
+
 function renderNetwork() {
   const grid = document.getElementById('networkGrid');
   grid.innerHTML = '';
@@ -55,14 +62,17 @@ function renderNetwork() {
 
   contacts.forEach(contact => {
     const card = document.createElement('div');
-    card.className = `bg-black border border-zinc-700 hover:border-amber-400 rounded-3xl p-6 transition-all`;
+    card.className = `bg-black border border-zinc-700 hover:border-amber-400 rounded-3xl p-6 transition-all relative`;
     card.innerHTML = `
-      <div class="flex justify-between">
-        <div class="font-semibold text-lg">${contact.name}</div>
-        <div class="flex items-center gap-1 text-amber-400">
-          ${'★'.repeat(contact.strength)}
-          <span class="text-xs text-zinc-400">(${contact.strength}/10)</span>
+      <div class="flex justify-between items-start">
+        <div>
+          <div class="font-semibold text-lg">${contact.name}</div>
+          <div class="flex items-center gap-1 text-amber-400 mt-1">
+            ${'★'.repeat(contact.strength)} <span class="text-xs text-zinc-400">(${contact.strength}/10)</span>
+          </div>
         </div>
+        <button onclick="deleteContact(${contact.id}); event.stopImmediatePropagation();" 
+                class="text-red-400 hover:text-red-500 text-xl leading-none">🗑</button>
       </div>
       <p class="text-sm text-zinc-400 mt-3 line-clamp-2">${contact.notes}</p>
       <div class="mt-6 h-2 bg-zinc-800 rounded-full overflow-hidden">
