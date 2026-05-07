@@ -1,4 +1,4 @@
-// assets/js/shi-analyzer.js
+// assets/js/shi-analyzer.js - Smarter responses
 let allStratagems = [];
 
 async function loadStratagems() {
@@ -24,25 +24,21 @@ function analyzeShi() {
 
   resultArea.classList.remove('hidden');
 
-  // Simple keyword-based + random smart suggestions (client-side)
   const lower = input.toLowerCase();
-  let shiText = "The current Shi is **neutral to slightly unfavorable** — but full of hidden opportunities.";
-  let recommended = [];
+  let shiText = "The current Shi is **neutral** — good time to observe and prepare.";
+  let recommended = allStratagems.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   if (lower.includes("competitor") || lower.includes("price") || lower.includes("sales")) {
     shiText = "The current Shi is **favorable for attack** — your competitor has created a crack in their own defense.";
-    recommended = allStratagems.filter(s => 
-      s.category === "Attack" || s.tags.includes("opportunity")
-    ).slice(0, 4);
+    recommended = allStratagems.filter(s => s.category === "Attack" || s.tags?.includes("opportunity")).slice(0, 4);
   } 
-  else if (lower.includes("crisis") || lower.includes("problem") || lower.includes("losing")) {
-    shiText = "The current Shi is **dangerous but temporary** — perfect time to use defensive stratagems and prepare counter-attack.";
-    recommended = allStratagems.filter(s => 
-      s.category === "Defense" || s.category === "Escape"
-    ).slice(0, 4);
+  else if (lower.includes("crisis") || lower.includes("problem") || lower.includes("losing") || lower.includes("difficult")) {
+    shiText = "The current Shi is **dangerous but temporary** — perfect time to use defensive stratagems and prepare a counter-attack.";
+    recommended = allStratagems.filter(s => s.category === "Defense" || s.category === "Escape").slice(0, 4);
   } 
-  else {
-    recommended = allStratagems.sort(() => 0.5 - Math.random()).slice(0, 4);
+  else if (lower.includes("partner") || lower.includes("network") || lower.includes("relationship") || lower.includes("guanxi")) {
+    shiText = "The current Shi favors **long-term relationship building**. Focus on Guanxi and mutual benefit.";
+    recommended = allStratagems.filter(s => s.category === "Alliance" || s.tags?.includes("patience")).slice(0, 4);
   }
 
   shiResult.innerHTML = `
