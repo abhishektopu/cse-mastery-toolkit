@@ -1,1 +1,328 @@
-
+{
+  "stratagems": [
+    {
+      "id": 1,
+      "name": "Cross the Sea Under Camouflage",
+      "pinyin": "Màn Hǎi Guò Hǎi",
+      "category": "Preparation",
+      "description": "Hide your real intentions behind normal activities.",
+      "example": "Negotiate while pretending it's just a casual chat.",
+      "tags": ["deception", "planning"]
+    },
+    {
+      "id": 2,
+      "name": "Besiege Wei to Rescue Zhao",
+      "pinyin": "Wéi Wèi Jiù Zhào",
+      "category": "Attack",
+      "description": "Attack the enemy's weak point to force them to retreat from their strong position.",
+      "example": "Instead of direct confrontation, strike their supply chain.",
+      "tags": ["indirect", "strategy"]
+    },
+    {
+      "id": 3,
+      "name": "Kill with a Borrowed Knife",
+      "pinyin": "Jiè Dāo Shā Rén",
+      "category": "Attack",
+      "description": "Use someone else's resources or power to achieve your goal.",
+      "example": "Get a third party to pressure your competitor.",
+      "tags": ["leverage"]
+    },
+    {
+      "id": 4,
+      "name": "Wait at Leisure While the Enemy Toils",
+      "pinyin": "Yǐ Yì Dài Láo",
+      "category": "Defense",
+      "description": "Conserve your energy while the opponent exhausts themselves.",
+      "example": "Let competitors fight each other while you prepare.",
+      "tags": ["patience"]
+    },
+    {
+      "id": 5,
+      "name": "Loot a Burning House",
+      "pinyin": "Chèn Huǒ Dǎ Jié",
+      "category": "Attack",
+      "description": "Attack when the enemy is in crisis.",
+      "example": "Enter a market when your competitor is having internal problems.",
+      "tags": ["opportunity"]
+    },
+    {
+      "id": 6,
+      "name": "Make a Sound in the East, Attack in the West",
+      "pinyin": "Shēng Dōng Jī Xī",
+      "category": "Attack",
+      "description": "Create a distraction in one area while striking in another.",
+      "example": "Announce a new feature while launching in a different market.",
+      "tags": ["deception"]
+    },
+    {
+      "id": 7,
+      "name": "Create Something Out of Nothing",
+      "pinyin": "Wú Zhōng Shēng Yǒu",
+      "category": "Preparation",
+      "description": "Turn a weak position into strength by creating illusions or opportunities.",
+      "example": "Build hype around a minimum viable product.",
+      "tags": ["creativity"]
+    },
+    {
+      "id": 8,
+      "name": "Openly Repair the Gallery, Secretly Cross to Chencang",
+      "pinyin": "Àn Dù Chén Cāng",
+      "category": "Attack",
+      "description": "Use a visible, harmless action to mask your real plan.",
+      "example": "Publicly focus on one product while secretly developing the next.",
+      "tags": ["deception"]
+    },
+    {
+      "id": 9,
+      "name": "Watch the Fires Burn Across the River",
+      "pinyin": "Gé Àn Guān Huǒ",
+      "category": "Defense",
+      "description": "Stay neutral and watch your enemies destroy each other.",
+      "example": "Let two competitors fight while you strengthen your position.",
+      "tags": ["patience"]
+    },
+    {
+      "id": 10,
+      "name": "Hide a Dagger Behind a Smile",
+      "pinyin": "Xiào Lǐ Cáng Dāo",
+      "category": "Attack",
+      "description": "Appear friendly while preparing a decisive blow.",
+      "example": "Maintain good relations while building a better product.",
+      "tags": ["deception"]
+    },
+    {
+      "id": 11,
+      "name": "Sacrifice the Plum for the Peach",
+      "pinyin": "Lǐ Dài Táo Jiāng",
+      "category": "Sacrifice",
+      "description": "Give up something small to gain something greater.",
+      "example": "Lose a small client to win a much bigger one.",
+      "tags": ["tradeoff"]
+    },
+    {
+      "id": 12,
+      "name": "Take the Opportunity to Lead the Sheep Away",
+      "pinyin": "Shùn Shǒu Qiān Yáng",
+      "category": "Attack",
+      "description": "Exploit small opportunities as they arise.",
+      "example": "Quickly grab market share when a competitor slips.",
+      "tags": ["opportunity"]
+    },
+    {
+      "id": 13,
+      "name": "Beat the Grass to Startle the Snake",
+      "pinyin": "Dǎ Cǎo Jīng Shé",
+      "category": "Attack",
+      "description": "Make a small move to test the enemy's reaction.",
+      "example": "Test a small price change to see competitor response.",
+      "tags": ["testing"]
+    },
+    {
+      "id": 14,
+      "name": "Borrow a Corpse to Resurrect the Soul",
+      "pinyin": "Jiè Shī Huán Hún",
+      "category": "Preparation",
+      "description": "Revive an old idea or product in a new form.",
+      "example": "Rebrand an old service for a new market.",
+      "tags": ["revival"]
+    },
+    {
+      "id": 15,
+      "name": "Lure the Tiger Down the Mountain",
+      "pinyin": "Diào Hǔ Lí Shān",
+      "category": "Attack",
+      "description": "Lure the enemy out of their strong position.",
+      "example": "Force a competitor to fight on your terms.",
+      "tags": ["maneuver"]
+    },
+    {
+      "id": 16,
+      "name": "Let the Enemy Dig Their Own Grave",
+      "pinyin": "Yù Qín Gù Zòng",
+      "category": "Defense",
+      "description": "Allow the enemy to make mistakes and overextend.",
+      "example": "Wait for competitor to over-invest in a failing strategy.",
+      "tags": ["patience"]
+    },
+    {
+      "id": 17,
+      "name": "Cast a Brick to Attract Jade",
+      "pinyin": "Pāo Zhuān Yǐn Yù",
+      "category": "Preparation",
+      "description": "Offer something small to gain something valuable.",
+      "example": "Give free value to attract high-paying clients.",
+      "tags": ["bait"]
+    },
+    {
+      "id": 18,
+      "name": "Catch the Thief by Catching His Leader",
+      "pinyin": "Qín Zéi Qín Wáng",
+      "category": "Attack",
+      "description": "Attack the leader or key person to collapse the group.",
+      "example": "Target the decision-maker in negotiations.",
+      "tags": ["targeted"]
+    },
+    {
+      "id": 19,
+      "name": "Remove the Firewood from Under the Pot",
+      "pinyin": "Fǔ Dǐ Chōu Xīn",
+      "category": "Attack",
+      "description": "Cut off the enemy's resources or support.",
+      "example": "Disrupt their supply chain or key partnerships.",
+      "tags": ["disrupt"]
+    },
+    {
+      "id": 20,
+      "name": "Muddy the Waters",
+      "pinyin": "Hùn Shuǐ Mō Yú",
+      "category": "Attack",
+      "description": "Create confusion to hide your real actions.",
+      "example": "Launch multiple initiatives to confuse competitors.",
+      "tags": ["deception"]
+    },
+    {
+      "id": 21,
+      "name": "Golden Cicada Sheds Its Shell",
+      "pinyin": "Jīn Chán Tuō Qiào",
+      "category": "Escape",
+      "description": "Escape danger by leaving a decoy.",
+      "example": "Exit a failing project gracefully while shifting focus.",
+      "tags": ["escape"]
+    },
+    {
+      "id": 22,
+      "name": "Shut the Door to Catch the Thief",
+      "pinyin": "Guān Mén Zhuō Zéi",
+      "category": "Attack",
+      "description": "Trap the enemy so they have no escape.",
+      "example": "Create exclusivity in your offer.",
+      "tags": ["trap"]
+    },
+    {
+      "id": 23,
+      "name": "Befriend a Distant Enemy to Attack a Nearby One",
+      "pinyin": "Yuǎn Jiāo Jìn Gōng",
+      "category": "Alliance",
+      "description": "Form alliances with distant parties against a common nearby threat.",
+      "example": "Partner with international players against local competitors.",
+      "tags": ["alliance"]
+    },
+    {
+      "id": 24,
+      "name": "Borrow the Road to Attack Guo",
+      "pinyin": "Jiǎ Dào Fá Guó",
+      "category": "Attack",
+      "description": "Use a temporary alliance to achieve your goal, then discard it.",
+      "example": "Use a partner channel then build your own.",
+      "tags": ["temporary"]
+    },
+    {
+      "id": 25,
+      "name": "Replace the Beams with Rotten Timbers",
+      "pinyin": "Tōu Liáng Huàn Zhù",
+      "category": "Sabotage",
+      "description": "Replace key elements subtly to weaken the structure.",
+      "example": "Gradually shift client loyalty from competitor to you.",
+      "tags": ["subtle"]
+    },
+    {
+      "id": 26,
+      "name": "Point at the Mulberry and Abuse the Locust",
+      "pinyin": "Zhǐ Sāng Mà Huái",
+      "category": "Attack",
+      "description": "Criticize one to warn others indirectly.",
+      "example": "Publicly praise a value that indirectly criticizes competitors.",
+      "tags": ["indirect"]
+    },
+    {
+      "id": 27,
+      "name": "Feign Madness but Keep Wise",
+      "pinyin": "Jiǎ Chī Bù Diān",
+      "category": "Defense",
+      "description": "Pretend weakness or ignorance while staying sharp.",
+      "example": "Act less threatening while preparing a strong move.",
+      "tags": ["deception"]
+    },
+    {
+      "id": 28,
+      "name": "Remove the Ladder After Climbing the Wall",
+      "pinyin": "Shàng Wū Chōu Tī",
+      "category": "Sacrifice",
+      "description": "Cut off your own retreat to force full commitment.",
+      "example": "Burn bridges publicly to commit your team.",
+      "tags": ["commitment"]
+    },
+    {
+      "id": 29,
+      "name": "Deck the Tree with Fake Flowers",
+      "pinyin": "Shù Shàng Kāi Huā",
+      "category": "Deception",
+      "description": "Make something weak appear strong.",
+      "example": "Use great marketing for a minimum product.",
+      "tags": ["appearance"]
+    },
+    {
+      "id": 30,
+      "name": "Make the Host and the Guest Swap Places",
+      "pinyin": "Fǎn Kè Wéi Zhǔ",
+      "category": "Reversal",
+      "description": "Turn a defensive position into an offensive one.",
+      "example": "Go from follower to market leader.",
+      "tags": ["reversal"]
+    },
+    {
+      "id": 31,
+      "name": "Use the Beauty to Trap the Enemy",
+      "pinyin": "Měi Rén Jì",
+      "category": "Attack",
+      "description": "Use allure, incentives, or charm to weaken the enemy.",
+      "example": "Offer irresistible deals to steal clients.",
+      "tags": ["temptation"]
+    },
+    {
+      "id": 32,
+      "name": "Open the Gates, Invite the Enemy In",
+      "pinyin": "Kōng Chéng Jì",
+      "category": "Defense",
+      "description": "Appear undefended to lure the enemy into a trap.",
+      "example": "Show weakness publicly while having a strong counter ready.",
+      "tags": ["trap"]
+    },
+    {
+      "id": 33,
+      "name": "Use the Enemy's Agents Against Him",
+      "pinyin": "Fǎn Jiān Jì",
+      "category": "Intelligence",
+      "description": "Turn the enemy's spies or partners against them.",
+      "example": "Hire away their key talent.",
+      "tags": ["intelligence"]
+    },
+    {
+      "id": 34,
+      "name": "Self-Torture Scheme",
+      "pinyin": "Kǔ Ròu Jì",
+      "category": "Deception",
+      "description": "Inflict pain on yourself to gain trust or sympathy.",
+      "example": "Publicly admit a small flaw to build credibility.",
+      "tags": ["trust"]
+    },
+    {
+      "id": 35,
+      "name": "Chain Stratagems",
+      "pinyin": "Lián Huán Jì",
+      "category": "Complex",
+      "description": "Link multiple stratagems together for a bigger effect.",
+      "example": "Combine several moves in a long-term campaign.",
+      "tags": ["multi-step"]
+    },
+    {
+      "id": 36,
+      "name": "Run Away as the Best Strategy",
+      "pinyin": "Zǒu Wéi Shàng Cè",
+      "category": "Escape",
+      "description": "When all else fails, retreat to fight another day.",
+      "example": "Pivot or exit a failing market gracefully.",
+      "tags": ["retreat"]
+    }
+  ]
+}
