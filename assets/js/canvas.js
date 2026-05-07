@@ -1,4 +1,4 @@
-// assets/js/canvas.js - FIXED & IMPROVED
+// assets/js/canvas.js - FIXED & IMPROVED (Personalized Move now works)
 let allStratagems = [];
 
 async function loadStratagems() {
@@ -8,9 +8,7 @@ async function loadStratagems() {
     allStratagems = data.stratagems;
     renderStratagems(allStratagems);
   } catch (e) {
-    console.error("Could not load stratagems.json", e);
-    document.getElementById('stratagemsGrid').innerHTML = `
-      <p class="col-span-full text-center py-12 text-red-400">Error loading stratagems. Please refresh.</p>`;
+    console.error("Could not load stratagems", e);
   }
 }
 
@@ -19,7 +17,7 @@ function renderStratagems(stratagems) {
   grid.innerHTML = '';
 
   if (stratagems.length === 0) {
-    grid.innerHTML = `<p class="col-span-full text-center py-12 text-zinc-400">No stratagems found.<br>Try different search terms like "competitor", "crisis", "partner", or "negotiation".</p>`;
+    grid.innerHTML = `<p class="col-span-full text-center py-12 text-zinc-400">No stratagems found.<br>Try "negotiation", "competitor", "crisis", etc.</p>`;
     return;
   }
 
@@ -50,6 +48,10 @@ function showDetail(stratagem) {
   const modal = document.getElementById('detailModal');
   modal.classList.remove('hidden');
   modal.classList.add('flex');
+  
+  // Clear previous result
+  document.getElementById('applyResult').classList.add('hidden');
+  document.getElementById('situationInput').value = '';
 }
 
 function closeModal() {
@@ -58,17 +60,48 @@ function closeModal() {
   modal.classList.remove('flex');
 }
 
-// Improved search — now searches EXAMPLE too + more flexible
+// FIXED & IMPROVED Personalized Move
+function applyStratagem() {
+  const input = document.getElementById('situationInput').value.trim();
+  const resultDiv = document.getElementById('applyResult');
+  
+  if (!input) {
+    resultDiv.innerHTML = `<p class="text-amber-400 p-4">Please type your situation first.</p>`;
+    resultDiv.classList.remove('hidden');
+    return;
+  }
+
+  // Better dynamic response
+  let suggestion = "Use this stratagem to gain positional advantage while staying calm and strategic.";
+  
+  const lowerInput = input.toLowerCase();
+  if (lowerInput.includes("competitor") || lowerInput.includes("price") || lowerInput.includes("sales")) {
+    suggestion = "Create a distraction in one area while striking in another (or use a third party to pressure them).";
+  } else if (lowerInput.includes("crisis") || lowerInput.includes("problem") || lowerInput.includes("losing")) {
+    suggestion = "Act while the opponent is distracted — this is the perfect moment to 'Loot a Burning House'.";
+  } else if (lowerInput.includes("partner") || lowerInput.includes("network") || lowerInput.includes("relationship")) {
+    suggestion = "Focus on building long-term Guanxi. Offer small value now to gain big advantage later.";
+  }
+
+  resultDiv.innerHTML = `
+    <div class="p-5 bg-green-900/30 border border-green-400 rounded-2xl text-green-200">
+      <strong>✅ Personalized Move Suggestion:</strong><br><br>
+      ${suggestion}<br><br>
+      <small class="text-green-400">This is how Chinese strategists turn difficult situations into long-term advantage.</small>
+    </div>
+  `;
+  resultDiv.classList.remove('hidden');
+}
+
+// Search & filter
 function filterStratagems() {
   const term = document.getElementById('searchInput').value.toLowerCase().trim();
   const category = document.getElementById('categoryFilter').value;
 
   const filtered = allStratagems.filter(s => {
-    const searchText = `${s.name} ${s.pinyin} ${s.description} ${s.example || ''} ${s.tags ? s.tags.join(' ') : ''}`.toLowerCase();
-    
+    const searchText = `${s.name} ${s.pinyin} ${s.description} ${s.example || ''}`.toLowerCase();
     const matchesSearch = !term || searchText.includes(term);
     const matchesCategory = !category || s.category === category;
-    
     return matchesSearch && matchesCategory;
   });
 
@@ -78,7 +111,6 @@ function filterStratagems() {
 function addEventListeners() {
   const searchInput = document.getElementById('searchInput');
   const categoryFilter = document.getElementById('categoryFilter');
-
   searchInput.addEventListener('input', filterStratagems);
   categoryFilter.addEventListener('change', filterStratagems);
 }
@@ -93,5 +125,5 @@ function resetFilters() {
 window.onload = () => {
   loadStratagems();
   addEventListeners();
-  console.log('%c🎨 36 Stratagems Canvas — FIXED & READY!', 'color:#fbbf24; font-weight:bold');
+  console.log('%c🎨 36 Stratagems Canvas — Fully Fixed!', 'color:#fbbf24; font-weight:bold');
 };
